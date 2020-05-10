@@ -10,14 +10,15 @@ export class MyserviceService {
   public getTest() {
     console.log("ins service get test");
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.httpService.get<Test>("http://localhost:9000/test/testdetails");
+    return this.httpService.get<Test>("http://localhost:9002/test/testdetails");
   }
+ 
 
   public addTest(addtest: Test) {
     console.log("ins service add");
     console.log(addtest);
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.httpService.post("http://localhost:9000/test/addTest", addtest,  { headers, responseType: 'text'});
+    return this.httpService.post("http://localhost:9001/test/addTest", addtest,  { headers, responseType: 'text'});
   }
   
   public update(updatetest: Test) {
@@ -30,18 +31,18 @@ export class MyserviceService {
     console.log("ins service update");
     console.log(this.updatetest);
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.httpService.post("http://localhost:9000/test/updateTest", updatetest,  { headers, responseType: 'text'});
+    return this.httpService.put("http://localhost:9003/test/updateTest", updatetest,  { headers, responseType: 'text'});
   }
-  delete(id: number) {
+  delete(id: BigInteger) {
     console.log("ins service delete");
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.httpService.delete("http://localhost:9000/test/deleteTest/" + id,  { headers, responseType: 'text'});
+    return this.httpService.delete("http://localhost:9004/test/deleteTest/" + id,  { headers, responseType: 'text'});
   }
 
 }
 export class Test {
-  id: number;
-  duration:string;
+  id: BigInteger;
+  duration: string;
   title: string;
   totalmarks: number;
   starttime: string;

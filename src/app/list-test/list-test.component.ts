@@ -11,6 +11,7 @@ export class ListTestComponent implements OnInit {
 
   message: string;
   test: Test[];
+  id:BigInteger
   constructor(private myservice: MyserviceService, private router: Router) {
   }
 
@@ -24,12 +25,13 @@ export class ListTestComponent implements OnInit {
   }
   update(updatetest: Test) {
     this.myservice.update(updatetest);
-    this.router.navigate(['/updatetest']); //updating the employee
+    this.router.navigate(['/updatetest']); //updating the test
   }
-  delete(deleteemployee: Test): any {
-    this.myservice.delete(deleteemployee.id).subscribe(data => {
+  delete(deletetest: Test): any {
+    this.myservice.delete(deletetest.id).subscribe(data => {
       this.message = data
     });
+    
     this.router.navigate(['/listtest']);
   }
 }

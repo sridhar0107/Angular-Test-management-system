@@ -75,7 +75,7 @@
 
             <label>START TIME: </label>
 
-            <input required minlength="1" type="text" [(ngModel)]="obj1.starttime" #starttime='ngModel' name="starttime"
+            <input required minlength="1" type="datetime-local" [(ngModel)]="obj1.starttime" #starttime='ngModel' name="starttime"
                 ngModel class="form-control">
 
             <div *ngIf='starttime.errors
@@ -97,7 +97,7 @@
 
         <label>END TIME: </label>
 
-        <input required minlength="1" type="text" [(ngModel)]="obj1.endtime" #endtime='ngModel' name="endtime"
+        <input required minlength="1" type="datetime-local" [(ngModel)]="obj1.endtime" #endtime='ngModel' name="endtime"
             ngModel class="form-control">
 
         <div *ngIf='endtime.errors

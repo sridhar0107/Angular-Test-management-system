@@ -10,12 +10,15 @@ import {FormsModule} from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     AddTestComponent,
     ListTestComponent,
-    UpdateTestComponent
+    UpdateTestComponent,
+   
+
   ],
   imports: [
     BrowserModule,
